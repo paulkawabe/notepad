@@ -1,10 +1,8 @@
 import { NextResponse } from "next/server";
-import { PrismaClient } from '@prisma/client';
 import jwt from "jsonwebtoken";
 const bcrypt = require('bcrypt')
 const saltRounds = 10;
-
-const prisma = new PrismaClient();
+import prisma from "@/app/lib/Prisma";
 
 export async function POST(request: Request, response: NextResponse){
     
@@ -57,7 +55,7 @@ export async function POST(request: Request, response: NextResponse){
 
     } catch (error) {
         console.log(error)
-        return NextResponse.json({message : 'something went wrong'})
+        return NextResponse.json({message : 'something went wrong'}, {status: 400})
     }
 
     

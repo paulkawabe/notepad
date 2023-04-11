@@ -23,7 +23,7 @@ export default function Home() {
         <h1 className='home__hero'>Notepad</h1>
       </div>
       <p className='home__content'>
-        Step up your practice with notepad.
+        Step up your practice with Notepad.
       </p>
       <div className='home__cards'>
         <div className='home__card'>

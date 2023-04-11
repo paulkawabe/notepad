@@ -4,11 +4,13 @@ import { useState } from "react";
 import axios from 'axios';
 import './Signup.scss'
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function page() {
 
     const router = useRouter();
-    
+
+    const [success, setSuccess] = useState(false)
     const [firstname, setFirstname] = useState<string>('')
     const [lastname, setLastname] = useState<string>('')
     const [email, setEmail] = useState<string>('')
@@ -31,6 +33,7 @@ export default function page() {
             .post('http://localhost:3000/api/user', body)
             .then((result) => {
                 console.log(result.data)
+                setSuccess(true)
             })
             .catch((error) => {
                 console.log(error)
@@ -83,6 +86,9 @@ export default function page() {
                     </div>
                 </div>
                 <button className='signup__signup'>Signup</button>
+                <br />
+                <p className={success ? '' : 'signup--hide'}>account created!</p>
+                <Link href='http://localhost:3000/login' className={success ? 'signup__signup' : 'signup--hide'}>login</Link>
             </form>
         </div>
     )

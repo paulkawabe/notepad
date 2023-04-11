@@ -32,6 +32,10 @@
         }
     }
 
+    &--hide {
+        display: none;
+    }
+
     &__form {
         display: flex;
         gap: 5rem;
