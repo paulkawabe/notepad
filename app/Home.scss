@@ -1,0 +1,60 @@
+@use './styles/vairables/variables' as *;
+
+.home {
+
+    max-width: 60rem; 
+    margin: 0 auto;
+
+    &__hero {
+        font-size: 7rem;
+        border-bottom: 5px solid $black;
+        width: fit-content;
+        padding-right: 4rem;
+    }
+
+    &__content {
+        font-size: 2rem;
+    }
+
+    &__cards {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    &__card {
+        display: flex;
+        align-items: center;
+        border: 3px solid $black;
+        border-radius: 20px;
+        max-width: 16rem;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    &__links {
+        border-top: 3px solid $black;
+        padding-top: 2rem;
+        margin-top: 2rem;
+        display: flex;
+        gap: 2.25rem;
+        justify-content: center;
+    }
+
+    &__link {
+        padding: 0.5rem 1rem;
+        font-size: 2rem;
+        border: 3px solid $black;
+        border-radius: 10px;
+        background-size: 200% 100% ;
+        background-image: linear-gradient(to right, $white 50%, $yellow 50%);
+        -webkit-transition: background-position 1s;
+        -moz-transition: background-position 1s;
+        transition: ease-in background-position 0.1s;
+
+        &:hover {
+            background-position: -100% 0;
+        }
+    }
+}

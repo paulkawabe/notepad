@@ -1,0 +1,36 @@
+@use '../../styles/vairables/variables' as *;
+
+.notes {
+    margin: 1rem 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+}
+
+.note {
+    border: 3px solid $black;
+    border-radius: 20px;
+    max-width: 15rem;
+    background-color: $lightyellow;
+
+    &__body {
+        margin: 1rem;
+    }
+
+
+    &__details{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        font-size: 12px;
+        padding: 0.25rem 0 0.5rem 0;
+    }
+
+    &__detail {
+        margin: 0 1rem 0 1rem;
+    }
+}
+
+.no__notes {
+    margin-left: 2rem;
+}

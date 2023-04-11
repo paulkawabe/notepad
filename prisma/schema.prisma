@@ -1,0 +1,72 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model user {
+  id        String      @id @default(uuid())
+  firstname String
+  lastname  String
+  email     String @unique
+  username  String
+  password  String
+  session   session[]
+  comment   comment[]
+  recording recording[]
+}
+
+model session {
+  session_id   String      @id @default(uuid())
+  owner        user        @relation(fields: [owner_id], references: [id])
+  owner_id     String
+  session_name String
+  time_start   DateTime
+  time_end     DateTime
+  active       Boolean     @default(true)
+  focus        focus[]
+  comment      comment[]
+  recording    recording[]
+}
+
+model focus {
+  focus_id    String      @id @default(uuid())
+  session     session     @relation(fields: [session_id], references: [session_id])
+  session_id  String
+  focus_title String
+  time_start  DateTime
+  time_end    DateTime
+  comment     comment[]
+  recording   recording[]
+}
+
+model comment {
+  comment_id String   @id @default(uuid())
+  focus      focus    @relation(fields: [focus_id], references: [focus_id])
+  focus_id   String
+  session    session  @relation(fields: [session_id], references: [session_id])
+  session_id String
+  body       String
+  user       user     @relation(fields: [user_id], references: [id])
+  user_id    String
+  timestamp  DateTime @default(now())
+}
+
+model recording {
+  recording_id   String   @id @default(uuid())
+  recording_name String
+  focus          focus    @relation(fields: [focus_id], references: [focus_id])
+  focus_id       String
+  session        session  @relation(fields: [session_id], references: [session_id])
+  session_id     String
+  user           user     @relation(fields: [user_id], references: [id])
+  user_id        String
+  timestamp      DateTime @default(now())
+  data           Bytes    @db.ByteA
+}

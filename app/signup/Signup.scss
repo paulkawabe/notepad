@@ -1,0 +1,39 @@
+@use '../styles/vairables/variables' as *;
+
+.signup {
+    max-width: 60rem;
+    margin: 0 auto;
+
+    &__label {
+        margin-left: 0.5rem;
+    }
+
+    &__input {
+        border: 3px solid $black;
+        border-radius: 20px;
+        width: 12rem;
+        height: 2rem;
+        padding: 0 1rem;
+    }
+
+    &__signup {
+        padding: 0.5rem 1rem;
+        font-size: 1.5rem;
+        border: 3px solid $black;
+        border-radius: 20px;
+        background-size: 200% 100% ;
+        background-image: linear-gradient(to right, $white 50%, $yellow 50%);
+        -webkit-transition: background-position 1s;
+        -moz-transition: background-position 1s;
+        transition: ease-in background-position 0.1s;
+
+        &:hover {
+            background-position: -100% 0;
+        }
+    }
+
+    &__form {
+        display: flex;
+        gap: 5rem;
+    }
+}

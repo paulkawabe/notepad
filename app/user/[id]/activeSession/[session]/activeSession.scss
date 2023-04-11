@@ -1,0 +1,52 @@
+@use '../../../../styles/vairables/variables' as *;
+
+.activeSession {
+    max-width: 60rem;
+    margin: 0 auto;
+
+    &__save {
+        background-color: $neonGreen;
+        border: 3px solid $black;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        margin: 3rem 2rem 1rem 0rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.newFocus {
+    display: flex;
+    flex-direction: column;
+
+    &__input {
+        height: 2rem;
+        padding: 0 0.5rem;
+        border: 3px solid $black;
+        border-radius: 20px;
+        width: 15rem;
+        margin-top: 0.5rem;
+    }
+
+    &__label {
+        margin-bottom: 0.5rem;
+    }
+
+    &__add {
+        background-color: $lightblue;
+        border: 3px solid $black;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        margin: 1rem 2rem 1rem 0rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

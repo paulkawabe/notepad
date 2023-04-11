@@ -1,0 +1,15 @@
+@use '../../styles/vairables/variables' as *;
+
+
+.footer {
+    min-height: 10rem;
+    min-width: 100%;
+    background-color: $black;
+}
+
+.top {
+    background-color: $white;
+    min-height: 3rem;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}

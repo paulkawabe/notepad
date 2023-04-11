@@ -1,0 +1,161 @@
+@use '../../styles/vairables/variables' as *;
+
+@keyframes slideUp {
+    from {
+        opacity: 0%;
+        padding-bottom: 2rem;
+    }
+    to {
+        opacity: 100%;
+        padding-bottom: 0.5rem;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        opacity: 0%;
+        margin-right: 3rem;
+        margin-bottom: 3rem;
+    }
+    50% {
+        opacity: 25%;
+    }
+    100% {
+        opacity: 100%;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+main {
+    background-color: $white;
+}
+
+.userPage {
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    max-width: 64rem;
+    margin: 0 auto;
+    justify-content: center;
+
+    &__banner {
+        display: flex;
+        align-items: flex-start;
+        min-height: 14rem;
+    }
+
+    &__header {
+        font-size: 3rem;
+        font-weight: 700;
+        display: inline;
+        padding: 3rem 2rem 0.5rem 0;
+        border-bottom: 3px solid $black;
+        animation-name: slideUp;
+        animation-duration: 1.5s;
+        animation-timing-function: ease-out;
+    }
+
+    &__sessionHeader {
+        margin-top: 0rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 3px solid $black;
+    }
+
+    &__sessionList {
+        padding: 0;
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+    }
+
+    &__sessionItem {
+        position: relative;
+        padding: 1rem 2rem;
+        min-width: 15.5rem;
+        max-width: 15.5rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        border: 3px solid $black;
+        border-radius: 10px;
+        animation: slideLeft 1.5s ease-out;
+
+        &:hover {
+            top: -4px;
+            left: -4px;
+            cursor: pointer;
+            box-shadow: 4px 4px $black;
+        }
+    }
+
+    &__newSession {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+        margin-bottom: 5rem;
+        width: 60%;
+        background-color: $yellow;
+        border: 3px solid $black;
+        border-radius: 20px;
+
+        &Title {
+            display: inline;
+            font-size: 2rem;
+            display: inline;
+            margin: 0 0 0.5rem 0;
+            border-bottom: 2px solid $black;
+            padding-bottom: 1rem;
+        }
+
+        &Label {
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+
+        &Input {
+            height: 2rem;
+            outline: none;
+            border: 2px solid $black;
+            border-radius: 10px;
+            padding: 0 0.5rem 0 1rem;
+            min-width: 247px;
+            font-weight: 500;
+            font-size: 1rem;
+
+            &:focus {
+                border: 2px solid $blue;
+            }
+        }
+
+        &Button {
+            text-align: center;
+            min-width: 17.1875rem;
+            margin: 2rem 0 0 0;
+            background-color: $white;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: $black;
+            padding: 1rem;
+            border-radius: 20px;
+            border: 2px solid $black;
+            background-size: 200% 100% ;
+            background-image: linear-gradient(to right, $white 50%, $lightblue 50%);
+            -webkit-transition: background-position 1s;
+            -moz-transition: background-position 1s;
+            transition: ease-in background-position 0.1s;
+    
+            &:hover {
+                background-position: -100% 0;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.sessionTitle {
+    border-bottom: 2px solid $black;
+}

@@ -1,0 +1,62 @@
+@use '../../styles/vairables/variables' as *;
+
+header {
+    background-color: $white;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-content: baseline;
+    background-color: $white;
+    border-bottom: 3px solid $black;
+    border-left: 3px solid $black;
+    border-right: 3px solid $black;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    gap: 1.5rem;
+    padding: 0.5rem 0.5rem;
+    font-weight: 600;
+    
+    &__link {
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        border: 3px solid $black;
+        border-radius: 10px;
+        background-size: 200% 100% ;
+        background-image: linear-gradient(to right, $white 50%, $yellow 50%);
+        -webkit-transition: background-position 1s;
+        -moz-transition: background-position 1s;
+        transition: ease-in background-position 0.1s;
+
+        &:hover {
+            background-position: -100% 0;
+        }
+
+        &--home {
+            margin-right: auto;
+            font-size: 2rem;
+            margin-left: 4rem;
+        }
+    }
+
+    &__signout {
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        border: 3px solid $black;
+        border-radius: 10px;
+        background-size: 200% 100% ;
+        background-image: linear-gradient(to right, $white 50%, $blue 50%);
+        -webkit-transition: background-position 1s;
+        -moz-transition: background-position 1s;
+        transition: ease-in background-position 0.1s;
+
+        &:hover {
+            background-position: -100% 0;
+        }
+    }
+}

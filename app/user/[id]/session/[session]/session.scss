@@ -1,0 +1,13 @@
+@use '../../../../styles/vairables/variables' as *;
+
+.session {
+    max-width: 60rem;
+    margin: 0 auto;
+
+    &__title {
+        font-size: 2rem;
+        border-bottom: 3px solid $black;
+        padding-bottom: 0.5rem;
+        margin-top: 3rem;
+    }
+}
